@@ -69,6 +69,12 @@ int	ft_printf(const char *s, ...)
 		{
 			if (t_conv == 's')
 				ft_putstr(va_arg(list, char*));
+			if (t_conv == 'd')
+				ft_putnbr(va_arg(list, int));
+			if (t_conv == 'c')
+				ft_putchar(va_arg(list, char));
+			if (t_conv == 'c')
+				ft_putchar(va_arg(list, char));
 
 		}
 		s++;

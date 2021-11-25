@@ -17,4 +17,12 @@
 #include<string.h>
 #include<unistd.h>
 
+
+/*FUNCTION PROTOTYPES*/
+
+void ft_putchar(char c);
+void ft_putstr(char *s);
+int ft_putnbr(int n);
+int	ft_atoi(const char *str);
+
 #endif
