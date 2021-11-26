@@ -43,3 +43,18 @@ int ft_putnbr(int n, int count)
 	}
 	return (count);
 }
+
+int ft_unsigned_putnbr(unsigned int n, int count)
+{
+	if (n >= 10)
+	{
+		count = ft_unsigned_putnbr((n / 10), count);
+		count = ft_unsigned_putnbr((n % 10), count);
+	}
+	else
+	{
+		ft_putchar(n + '0');
+		++count;
+	}
+	return (count);
+}

@@ -20,5 +20,6 @@
 int ft_putchar(char c);
 int ft_putnbr(int n, int count);
 int ft_putstr(char *s);
+int ft_unsigned_putnbr(unsigned int n, int count);
 
 # endif
