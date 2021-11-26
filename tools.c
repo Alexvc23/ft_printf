@@ -1,23 +1,29 @@
-void	ft_putchar(char c)
+#include"printf.h"
+
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return ;
+	return (1);
 }
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
+	int	counter;
 
 	i = 0;
+	counter = 0;
 	while (s[i])
+	{
 		write(1, &s[i++], 1);
-	return ;
+		counter++;
+	}
+	return (counter);
 }
 
-int ft_putnbr(int n)
+int ft_putnbr(int n, int count)
 {
 	long long	nb;
-    int         count;
 
 	nb = (long long)n;
 	if (nb < 0)
@@ -27,13 +33,10 @@ int ft_putnbr(int n)
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr((nb / 10), count);
+		ft_putnbr((nb % 10), count);
 	}
 	else
-    {
 		ft_putchar(nb + '0');
-        count++;
-    }
-    return (count);
+	return (count++);
 }

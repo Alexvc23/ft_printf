@@ -52,14 +52,29 @@ char ft_check_input(const char *s)
 	return (0);
 }
 
-void ft_putstr(char *s)
+int ft_funcheck(va_list list, char c)
 {
-	write(1, s, strlen(s));
-	return ;
+	int counter;
+
+	counter = 0;
+	if (c == 's')
+		counter = ft_putstr(va_arg(list, char *));
+	if (c == 'c')
+		counter = ft_putchar(va_arg(list, int));
+	if (c == 'i' || c == 'd')
+		counter = ft_putnbr(va_arg(list, int), 0);
+	/* 	if (c == 'x')
+		counter = ft_putnbr(va_arg(list, int));
+	if (c == 'p')
+		counter = ft_putnbr(va_arg(list, int));
+	if (c == 'i' || c == 'd')
+		counter = ft_putnbr(va_arg(list, int)); */
+	return (counter);
 }
+
 int	ft_printf(const char *s, ...)
 {
-	va_list	list;	
+	va_list	list;
 	char	t_conv;
 
 	va_start(list, s);
@@ -67,10 +82,11 @@ int	ft_printf(const char *s, ...)
 	{
 		if (*s == '%' && (t_conv = ft_check_input(s + 1)))
 		{
-			if (t_conv == 's')
-				ft_putstr(va_arg(list, char*));
-
+			ft_funcheck(list, *(s + 1));
+			s += 2;
+			continue;
 		}
+		write(1, s, 1);
 		s++;
 	}
 	va_end(list);
@@ -79,6 +95,8 @@ int	ft_printf(const char *s, ...)
 
 int main()
 {
-	char *test = "hola";
-	ft_printf("lsdkfjldkfj%s", test);
+	int test = 234234;
+	int len;
+	len = ft_printf("lsdkfjldkfj%i\n", test);
+	printf("%d", len);
 }

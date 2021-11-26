@@ -17,4 +17,8 @@
 #include<string.h>
 #include<unistd.h>
 
-#endif
+int ft_putchar(char c);
+int ft_putnbr(int n, int count);
+int ft_putstr(char *s);
+
+# endif
