@@ -17,20 +17,8 @@
 #include<string.h>
 #include<unistd.h>
 
-<<<<<<< HEAD
 int ft_putchar(char c);
 int ft_putnbr(int n, int count);
 int ft_putstr(char *s);
 
 # endif
-=======
-
-/*FUNCTION PROTOTYPES*/
-
-void ft_putchar(char c);
-void ft_putstr(char *s);
-int ft_putnbr(int n);
-int	ft_atoi(const char *str);
-
-#endif
->>>>>>> 7bdafef7e7fd6056e7778d83ffa4947f003b1578

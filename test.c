@@ -4,11 +4,10 @@
 
 int main()
 {
-    char *s = "tengo la camisa negra";
-    int test = 1;
     int length;
+    float   test2 = 92384.8;
 
-    length = printf("%s", s, test);
+    length = printf("%d\n",  test2);
     printf("%d", length);   
     return (0);
 }

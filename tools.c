@@ -1,8 +1,6 @@
 #include"printf.h"
 
 int	ft_putchar(char c)
-=======
-void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
@@ -35,10 +33,13 @@ int ft_putnbr(int n, int count)
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr((nb / 10), count);
-		ft_putnbr((nb % 10), count);
+		count = ft_putnbr((nb / 10), count);
+		count = ft_putnbr((nb % 10), count);
 	}
 	else
+	{
 		ft_putchar(nb + '0');
-	return (count++);
+		++count;
+	}
+	return (count);
 }

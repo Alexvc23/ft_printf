@@ -58,11 +58,11 @@ int ft_funcheck(va_list list, char c)
 
 	counter = 0;
 	if (c == 's')
-		counter = ft_putstr(va_arg(list, char *));
+		counter += ft_putstr(va_arg(list, char *));
 	if (c == 'c')
-		counter = ft_putchar(va_arg(list, int));
+		counter += ft_putchar(va_arg(list, int));
 	if (c == 'i' || c == 'd')
-		counter = ft_putnbr(va_arg(list, int), 0);
+		counter += ft_putnbr(va_arg(list, int), 0);
 	/* 	if (c == 'x')
 		counter = ft_putnbr(va_arg(list, int));
 	if (c == 'p')
@@ -76,33 +76,23 @@ int	ft_printf(const char *s, ...)
 {
 	va_list	list;
 	char	t_conv;
+	int		counter;
 
+	counter = 0;
 	va_start(list, s);
 	while (*s)
 	{
 		if (*s == '%' && (t_conv = ft_check_input(s + 1)))
 		{
-<<<<<<< HEAD
-			ft_funcheck(list, *(s + 1));
+			counter += ft_funcheck(list, *(s + 1));
 			s += 2;
 			continue;
-=======
-			if (t_conv == 's')
-				ft_putstr(va_arg(list, char*));
-			if (t_conv == 'd')
-				ft_putnbr(va_arg(list, int));
-			if (t_conv == 'c')
-				ft_putchar(va_arg(list, char));
-			if (t_conv == 'c')
-				ft_putchar(va_arg(list, char));
-
->>>>>>> 7bdafef7e7fd6056e7778d83ffa4947f003b1578
 		}
 		write(1, s, 1);
 		s++;
 	}
 	va_end(list);
-	return (0);
+	return (counter);
 }
 
 int main()
