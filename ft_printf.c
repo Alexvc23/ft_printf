@@ -63,14 +63,15 @@ int ft_funcheck(va_list list, char c)
 		counter += ft_putchar(va_arg(list, int));
 	if (c == 'i' || c == 'd')
 		counter += ft_putnbr(va_arg(list, int), 0);
-/*  	if (c == 'x')
-		counter = ft_putnbr(va_arg(list, int));
-	if (c == 'p')
+ 	if (c == 'x')
+		counter += ft_putnbr_base(va_arg(list, int), HEXA_LOW, 0);
+ 	if (c == 'X')
+		counter += ft_putnbr_base(va_arg(list, int), HEXA_UP, 0);
+/* 	if (c == 'p')
 		counter = ft_putnbr(va_arg(list, int)); */
 	if (c == 'u')
 		counter += ft_unsigned_putnbr(va_arg(list, int), 0);
-	return (counter);
-}
+	return (counter); }
 
 int	ft_printf(const char *s, ...)
 {
@@ -100,11 +101,11 @@ int main()
 {
 	int len;
 	len = ft_printf("cuando hay %i gatos, ellos \
-comiensan a %s despues %u aparecen\n", 4, "JUGAR ENTRE ELLOS", \
-	 -234344);
+comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
+	 -234234);
 	 printf("%d\n", len);
 	len = printf("cuando hay %i gatos, ellos \
-comiensan a %s despues %u aparecen\n", 4, "JUGAR ENTRE ELLOS", \
-	 -234344);
+comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
+	 -234234);
 	 printf("%d\n", len);
 }

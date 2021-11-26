@@ -17,9 +17,14 @@
 #include<string.h>
 #include<unistd.h>
 
+/* MACROS */
+#define HEXA_LOW    "0123456789abcdef"
+#define HEXA_UP     "0123456789ABCDEF"
+
 int ft_putchar(char c);
 int ft_putnbr(int n, int count);
 int ft_putstr(char *s);
 int ft_unsigned_putnbr(unsigned int n, int count);
+int	ft_putnbr_base(unsigned int nbr, char *base, int counter);
 
 # endif
