@@ -82,9 +82,21 @@ int	ft_printf(const char *s, ...)
 	{
 		if (*s == '%' && (t_conv = ft_check_input(s + 1)))
 		{
+<<<<<<< HEAD
 			ft_funcheck(list, *(s + 1));
 			s += 2;
 			continue;
+=======
+			if (t_conv == 's')
+				ft_putstr(va_arg(list, char*));
+			if (t_conv == 'd')
+				ft_putnbr(va_arg(list, int));
+			if (t_conv == 'c')
+				ft_putchar(va_arg(list, char));
+			if (t_conv == 'c')
+				ft_putchar(va_arg(list, char));
+
+>>>>>>> 7bdafef7e7fd6056e7778d83ffa4947f003b1578
 		}
 		write(1, s, 1);
 		s++;
