@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include"ft_printf.h"
 
 unsigned int	ft_strlen( char *s)
 {
@@ -52,18 +52,13 @@ int	ft_checkstr(char *s)
 
 int	ft_putnbr_base(unsigned int nbr, char *base, int counter)
 {
-	int				lenbase;
+	unsigned int	lenbase;
 	unsigned int	br;
 
 	br = nbr;
 	lenbase = ft_strlen(base);
 	if (!ft_checkstr(base))
 		return (0);
-	if (br < 0)
-	{
-		br *= -1;
-		write(1, "-", 1);
-	}
 	if (br >= lenbase)
 	{
 		counter = ft_putnbr_base((br / lenbase), base, counter);

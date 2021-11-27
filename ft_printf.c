@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
 /*
 *va_start
@@ -32,7 +32,7 @@ holds the information needed by va_start, va_arg, va_end, and va_copy
 
 char ft_check_input(const char *s)
 {
-	char conv[] = "cspdiuxX";	
+	char conv[] = "cspdiuxX%";	
 	int	i;
 	int	j;
 
@@ -71,19 +71,20 @@ int ft_funcheck(va_list list, char c)
 		counter = ft_putnbr(va_arg(list, int)); */
 	if (c == 'u')
 		counter += ft_unsigned_putnbr(va_arg(list, int), 0);
+	if (c == '%')
+		counter += ft_putchar('%');
 	return (counter); }
 
 int	ft_printf(const char *s, ...)
 {
 	va_list	list;
-	char	t_conv;
 	int		counter;
 
 	counter = 0;
 	va_start(list, s);
 	while (*s)
 	{
-		if (*s == '%' && (t_conv = ft_check_input(s + 1)))
+		if (*s == '%' && ft_check_input(s + 1))
 		{
 			counter += ft_funcheck(list, *(s + 1));
 			s += 2;
@@ -96,7 +97,7 @@ int	ft_printf(const char *s, ...)
 	va_end(list);
 	return (counter);
 }
-
+/* 
 int main()
 {
 	int len;
@@ -107,5 +108,8 @@ comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
 	len = printf("cuando hay %i gatos, ellos \
 comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
 	 -234234);
+	 len = ft_printf("%6 \n");
 	 printf("%d\n", len);
-}
+	 len = printf("%6 \n");
+	 printf("%d\n", len);
+} */

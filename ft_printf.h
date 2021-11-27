@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PRINTF_H
-# define PRINTF_H
+# ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 #include<stdarg.h>
 #include<stdio.h>
 #include<string.h>
@@ -26,5 +26,6 @@ int ft_putnbr(int n, int count);
 int ft_putstr(char *s);
 int ft_unsigned_putnbr(unsigned int n, int count);
 int	ft_putnbr_base(unsigned int nbr, char *base, int counter);
+int	ft_printf(const char *s, ...);
 
 # endif
