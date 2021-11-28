@@ -18,14 +18,18 @@
 #include<unistd.h>
 
 /* MACROS */
-#define HEXA_LOW    "0123456789abcdef"
-#define HEXA_UP     "0123456789ABCDEF"
+# define HEXA_LOW    "0123456789abcdef"
+# define HEXA_UP     "0123456789ABCDEF"
 
+/* FUNCTIONS PROTOTYPES */
 int ft_putchar(char c);
 int ft_putnbr(int n, int count);
 int ft_putstr(char *s);
 int ft_unsigned_putnbr(unsigned int n, int count);
 int	ft_putnbr_base(unsigned int nbr, char *base, int counter);
 int	ft_printf(const char *s, ...);
+unsigned int ft_strlen(char *s);
+int ft_print_address(void *address);
+int	ft_checkstr(char *s);
 
 # endif

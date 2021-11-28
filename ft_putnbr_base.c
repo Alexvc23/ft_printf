@@ -12,19 +12,6 @@
 
 #include"ft_printf.h"
 
-unsigned int	ft_strlen( char *s)
-{
-	unsigned int	counter;
-
-	counter = 0;
-	while (*s)
-	{
-		counter++;
-		s++;
-	}
-	return (counter);
-}
-
 int	ft_checkstr(char *s)
 {
 	char	*str;

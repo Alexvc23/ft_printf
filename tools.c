@@ -1,18 +1,36 @@
-#include"ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_putchar(char c)
+unsigned int ft_strlen(char *s)
+{
+	unsigned int counter;
+
+	counter = 0;
+	while (*s)
+	{
+		counter++;
+		s++;
+	}
+	return (counter);
+}
+
+int ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int	ft_putstr(char *s)
+int ft_putstr(char *s)
 {
-	int	i;
-	int	counter;
+	int i;
+	int counter;
 
 	i = 0;
 	counter = 0;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (s[i])
 	{
 		write(1, &s[i++], 1);
@@ -23,13 +41,14 @@ int	ft_putstr(char *s)
 
 int ft_putnbr(int n, int count)
 {
-	long long	nb;
+	long long nb;
 
 	nb = (long long)n;
 	if (nb < 0)
 	{
 		nb *= -1;
 		write(1, "-", 1);
+		count++;
 	}
 	if (nb >= 10)
 	{
