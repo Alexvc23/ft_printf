@@ -3,10 +3,16 @@ AT = @
 
 LIBRARY	= libftprintf.a
 FLAGS	= -Wall -Werror -Wextra
-C_LIBFT = $(wildcard *.c) 
+C_LIBFT = \
+	ft_printf.c			\
+	ft_putnbr_base.c	\
+	ft_strcpy.c			\
+	tools.c				\
+	ft_print_address.c	
 
 O_FILES = $(C_LIBFT:.c=.o)
-	INCLUDES = ft_printf.h 
+
+INCLUDES = ft_printf.h 
 
 all: $(LIBRARY) 
 

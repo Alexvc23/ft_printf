@@ -6,7 +6,7 @@
 /*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:45:20 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/29 10:55:35 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 14:32:23 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,30 +100,62 @@ int	ft_printf(const char *s, ...)
 	return (counter);
 }
 /* int main()
-   {
-   int len;
-   int	test = 34;
-   len = ft_printf("cuando hay %i gatos, ellos \
-   comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
-   -234234);
-   printf("%d\n", len);
-   len = printf("cuando hay %i gatos, ellos \
-   comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
-   -234234); 
-   len = ft_printf(" NULL %s NULL ", NULL);
-   printf("\n%d\n", len);
-   len = printf(" NULL %s NULL ", NULL);
-   printf("\n%d", len); 
-   len = ft_printf("ft_printf: %67777d\n", -2);
-   printf("\n%d\n", len);
-   len = printf("printf:%5d\n", 52625);
-   printf("\n%d", len); 
-   len = ft_printf("address number: %p\n", test);
-   printf("\n%d\n", len);
-   len = printf("address number: %p\n", test);
-   printf("\n%d", len); 
-   len = ft_printf("%c\n", 'a');
-   printf("%d\n", len);
-   len = printf("%c\n", 'a');
-   printf("%d", len); 
-   }  */
+{
+	int len;
+	int test = 34;
+
+	ft_printf(RED("Implemented function: "));
+	write(1, "ft_printf(cuando hay %i gatos, ellos \
+comiensan a %s despues %X aparecen\n 4, JUGAR ENTRE ELLOS, \
+-234234);\n",
+		  112);
+
+	ft_printf(RED("Result implemented function: "));
+	len = ft_printf(WHITE("cuando hay %i gatos, ellos \
+comiensan a %s despues %X aparecen\n"),
+					4, "JUGAR ENTRE ELLOS",
+					-234234);
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n"), len);
+
+	printf(RED("Real function: "));
+	len = printf(WHITE("cuando hay %i gatos, ellos \
+comiensan a %s despues %X aparecen\n"),
+				 4, "JUGAR ENTRE ELLOS",
+				 -234234);
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n\n"), len);
+
+	ft_printf(RED("Implemented function: "));
+	write(1, "ft_printf( NULL %s NULL , NULL);\n", 33);
+	ft_printf(RED("Result implemented function: "));
+	len = ft_printf(WHITE(" NULL %s NULL \n"), NULL);
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n"), len);
+	printf(RED("Real function: "));
+	len = printf(WHITE(" NULL %s NULL \n"), NULL);
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n\n"), len);
+
+	ft_printf(RED("Implemented function: "));
+	write(1, "ft_printf(address number: %p, test);\n", 37);
+	ft_printf(RED("Result implemented function: "));
+	len = ft_printf(WHITE("address number: %p\n"), test);
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n"), len);
+	printf(RED("Result real function: "));
+	len = printf(WHITE("address number: %p\n"), test);
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n\n"), len);
+
+	ft_printf(RED("Implemented function: "));
+	write(1, "ft_printf( % c, a);\n", 21);
+	ft_printf(RED("Result implemented function: "));
+	len = ft_printf(WHITE("%c\n"), 'a');
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n"), len);
+	printf(RED("Result real function: "));
+	len = printf(WHITE("%c\n"), 'a');
+	printf(L_YELLOW("return value: "));
+	printf(WHITE("%d\n\n"), len);
+} */
