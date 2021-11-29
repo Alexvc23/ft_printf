@@ -6,38 +6,39 @@
 /*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:45:20 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/25 11:57:41 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 10:55:35 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /*
-*va_start
-enables access to variadic function arguments
-(function macro)
-*va_arg
-accesses the next variadic function argument
-(function macro)
-*va_copy
-makes a copy of the variadic function arguments
-(function macro)
-*va_end
-ends traversal of the variadic function arguments
-(function macro)
-*va_list
-holds the information needed by va_start, va_arg, va_end, and va_copy
-(typedef varible)
-*/
+ *va_start
+ enables access to variadic function arguments
+ (function macro)
+ *va_arg
+ accesses the next variadic function argument
+ (function macro)
+ *va_copy
+ makes a copy of the variadic function arguments
+ (function macro)
+ *va_end
+ ends traversal of the variadic function arguments
+ (function macro)
+ *va_list
+ holds the information needed by va_start, va_arg, va_end, and va_copy
+ (typedef varible)
+ */
 
-char ft_check_input(const char *s)
+char	ft_check_input(const char *s)
 {
-	char conv[] = "cspdiuxX%";
-	int i;
-	int j;
+	char	conv[10];
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
+	ft_strcpy(conv, "cspdiuxX%");
 	while (s[i])
 	{
 		j = 0;
@@ -52,9 +53,9 @@ char ft_check_input(const char *s)
 	return (0);
 }
 
-int ft_funcheck(va_list list, char c)
+int	ft_funcheck(va_list list, char c)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (c == 's')
@@ -76,10 +77,10 @@ int ft_funcheck(va_list list, char c)
 	return (counter);
 }
 
-int ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-	va_list list;
-	int counter;
+	va_list	list;
+	int		counter;
 
 	counter = 0;
 	va_start(list, s);
@@ -89,7 +90,7 @@ int ft_printf(const char *s, ...)
 		{
 			counter += ft_funcheck(list, *(s + 1));
 			s += 2;
-			continue;
+			continue ;
 		}
 		write(1, s, 1);
 		s++;
@@ -99,26 +100,30 @@ int ft_printf(const char *s, ...)
 	return (counter);
 }
 /* int main()
-{
- 	int len;
-	int	test = 34;
- 	len = ft_printf("cuando hay %i gatos, ellos \
-comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
-	 -234234);
-	 printf("%d\n", len);
-	len = printf("cuando hay %i gatos, ellos \
-comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
--234234); 
-len = ft_printf(" NULL %s NULL ", NULL);
-printf("\n%d\n", len);
-len = printf(" NULL %s NULL ", NULL);
-printf("\n%d", len); 
- len = ft_printf("ft_printf: %67777d\n", -2);
-printf("\n%d\n", len);
-len = printf("printf:%5d\n", 52625);
-printf("\n%d", len); 
-len = ft_printf("address number: %p\n", test);
-printf("\n%d\n", len);
-len = printf("address number: %p\n", test);
-printf("\n%d", len); 
-}  */
+   {
+   int len;
+   int	test = 34;
+   len = ft_printf("cuando hay %i gatos, ellos \
+   comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
+   -234234);
+   printf("%d\n", len);
+   len = printf("cuando hay %i gatos, ellos \
+   comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
+   -234234); 
+   len = ft_printf(" NULL %s NULL ", NULL);
+   printf("\n%d\n", len);
+   len = printf(" NULL %s NULL ", NULL);
+   printf("\n%d", len); 
+   len = ft_printf("ft_printf: %67777d\n", -2);
+   printf("\n%d\n", len);
+   len = printf("printf:%5d\n", 52625);
+   printf("\n%d", len); 
+   len = ft_printf("address number: %p\n", test);
+   printf("\n%d\n", len);
+   len = printf("address number: %p\n", test);
+   printf("\n%d", len); 
+   len = ft_printf("%c\n", 'a');
+   printf("%d\n", len);
+   len = printf("%c\n", 'a');
+   printf("%d", len); 
+   }  */

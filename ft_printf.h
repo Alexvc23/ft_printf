@@ -31,5 +31,6 @@ int	ft_printf(const char *s, ...);
 unsigned int ft_strlen(char *s);
 int ft_print_address(void *address);
 int	ft_checkstr(char *s);
+char	*ft_strcpy(char *dst, char *src);
 
 # endif

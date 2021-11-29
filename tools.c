@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tools.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 10:14:29 by jvalenci          #+#    #+#             */
+/*   Updated: 2021/11/29 10:56:18 by jvalenci         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-unsigned int ft_strlen(char *s)
+unsigned int	ft_strlen(char *s)
 {
-	unsigned int counter;
+	unsigned int	counter;
 
 	counter = 0;
 	while (*s)
@@ -13,16 +25,16 @@ unsigned int ft_strlen(char *s)
 	return (counter);
 }
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
-	int i;
-	int counter;
+	int		i;
+	int		counter;
 
 	i = 0;
 	counter = 0;
@@ -39,9 +51,9 @@ int ft_putstr(char *s)
 	return (counter);
 }
 
-int ft_putnbr(int n, int count)
+int	ft_putnbr(int n, int count)
 {
-	long long nb;
+	long long	nb;
 
 	nb = (long long)n;
 	if (nb < 0)
@@ -63,7 +75,7 @@ int ft_putnbr(int n, int count)
 	return (count);
 }
 
-int ft_unsigned_putnbr(unsigned int n, int count)
+int	ft_unsigned_putnbr(unsigned int n, int count)
 {
 	if (n >= 10)
 	{

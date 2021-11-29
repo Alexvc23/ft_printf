@@ -6,7 +6,7 @@
 /*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 10:02:43 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/09/17 13:36:15 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 10:14:21 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,19 @@ int	ft_putnbr_base(unsigned int nbr, char *base, int counter)
 	return (counter);
 }
 /*int	main()
-{
-	write(1, "42:", 3);
-	ft_putnbr_base(0, "0123456789");
-	write(1, "\n2a:", 4);
-	ft_putnbr_base(600, "0123456789abcdef");
-	write(1, "\n-2a:", 5);
-	ft_putnbr_base(-42, "0123456789abcdef");
-	write(1, "\n:", 2);
-	ft_putnbr_base(42, "");
-	write(1, "\n:", 2);
-	ft_putnbr_base(42, "0");
-	write(1, "\n:", 2);
-	ft_putnbr_base(42, "+-0123456789abcdef");
-	write(1, "\n:", 2);
-}
-*/
+  {
+  write(1, "42:", 3);
+  ft_putnbr_base(0, "0123456789");
+  write(1, "\n2a:", 4);
+  ft_putnbr_base(600, "0123456789abcdef");
+  write(1, "\n-2a:", 5);
+  ft_putnbr_base(-42, "0123456789abcdef");
+  write(1, "\n:", 2);
+  ft_putnbr_base(42, "");
+  write(1, "\n:", 2);
+  ft_putnbr_base(42, "0");
+  write(1, "\n:", 2);
+  ft_putnbr_base(42, "+-0123456789abcdef");
+  write(1, "\n:", 2);
+  }
+  */

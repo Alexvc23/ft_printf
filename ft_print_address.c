@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_address.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex-ubuntu <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 17:46:54 by alex-ubun         #+#    #+#             */
-/*   Updated: 2021/11/28 17:50:44 by alex-ubun        ###   ########.fr       */
+/*   Created: 2021/11/29 10:12:23 by jvalenci          #+#    #+#             */
+/*   Updated: 2021/11/29 10:16:48 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr_basel(unsigned long long nbr, char *base, int counter)
+int	ft_putnbr_basel(unsigned long long nbr, char *base, int counter)
 {
-	unsigned long long lenbase;
+	unsigned long long	lenbase;
 
 	lenbase = ft_strlen(base);
 	if (!ft_checkstr(base))
@@ -32,12 +32,12 @@ int ft_putnbr_basel(unsigned long long nbr, char *base, int counter)
 	return (counter);
 }
 
-int ft_print_address(void *address)
+int	ft_print_address(void *address)
 {
-	int counter;
+	int			counter;
+	long long	new_address;
 
 	counter = 0;
-	long long new_address;
 	new_address = (long long)address;
 	if (!address)
 	{
