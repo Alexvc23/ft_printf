@@ -98,13 +98,11 @@ int ft_printf(const char *s, ...)
 	va_end(list);
 	return (counter);
 }
-/*  
-int main()
+/* int main()
 {
  	int len;
-  	void *test;
-	test = (void*)len;
-	len = ft_printf("cuando hay %i gatos, ellos \
+	int	test = 34;
+ 	len = ft_printf("cuando hay %i gatos, ellos \
 comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
 	 -234234);
 	 printf("%d\n", len);
@@ -114,9 +112,13 @@ comiensan a %s despues %X aparecen\n", 4, "JUGAR ENTRE ELLOS", \
 len = ft_printf(" NULL %s NULL ", NULL);
 printf("\n%d\n", len);
 len = printf(" NULL %s NULL ", NULL);
-printf("\n%d", len);
-len = ft_printf("address number: %p\n", 0);
+printf("\n%d", len); 
+ len = ft_printf("ft_printf: %67777d\n", -2);
 printf("\n%d\n", len);
-len = printf("address number: %p\n", 0);
-printf("\n%d", len);
+len = printf("printf:%5d\n", 52625);
+printf("\n%d", len); 
+len = ft_printf("address number: %p\n", test);
+printf("\n%d\n", len);
+len = printf("address number: %p\n", test);
+printf("\n%d", len); 
 }  */

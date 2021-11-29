@@ -41,7 +41,8 @@ int ft_print_address(void *address)
 	new_address = (long long)address;
 	if (!address)
 	{
-		counter += ft_putstr("(nil)");
+		counter += ft_putstr("0x");
+		counter += ft_putstr("0");
 		return (counter);
 	}
 	counter += ft_putstr("0x");
