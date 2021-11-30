@@ -69,7 +69,7 @@ int	ft_funcheck(va_list list, char c)
 	if (c == 'X')
 		counter += ft_putnbr_base(va_arg(list, int), HEXA_UP, 0);
 	if (c == 'p')
-		counter = ft_print_address(va_arg(list, void *));
+		counter += ft_print_address(va_arg(list, void *));
 	if (c == 'u')
 		counter += ft_unsigned_putnbr(va_arg(list, int), 0);
 	if (c == '%')
