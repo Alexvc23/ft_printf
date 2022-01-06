@@ -6,7 +6,7 @@ FLAGS	= -Wall -Werror -Wextra
 C_LIBFT = \
 	ft_printf.c			\
 	ft_putnbr_base.c	\
-	ft_strcpy.c			\
+	ft_strchr.c			\
 	tools.c				\
 	ft_print_address.c	
 
