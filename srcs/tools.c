@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jvalenci <jvalenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 10:14:29 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/29 10:56:18 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 15:27:49 by jvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ unsigned int	ft_strlen(char *s)
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(char *s)
@@ -39,10 +38,7 @@ int	ft_putstr(char *s)
 	i = 0;
 	counter = 0;
 	if (!s)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
+		return (write(1, "(null)", 6));
 	while (s[i])
 	{
 		write(1, &s[i++], 1);
